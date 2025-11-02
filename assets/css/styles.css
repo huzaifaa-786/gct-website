@@ -188,14 +188,14 @@
 }
 .pin-icon {
     position: absolute;
-    top: -35px;         
+    top: -30px;         
     left: 46%;
     display: flex;
     flex-direction: column;
     align-items: center;
- 
+    transform-origin: bottom;
+    transition: transform 0.3s ease;
 }
-
 .pin-circle {
     width: 20px;
     height: 20px;
@@ -205,7 +205,7 @@
 }
 .pin-line {
     width: 4px;
-    height: 25px;
+height: 20px;
     background: linear-gradient(#4d6afe, rgba(77,106,254,0));
     border-radius: 4px;
     margin-top: -2px;
@@ -221,7 +221,7 @@
 color: rgb(98, 63, 184);
 }
 .h23{
-    background-color: rgb(79, 79, 196);
+    background-color: rgb(9, 9, 231);
     display: inline;
     border-radius: 50px;
     padding: 8px 20px;
@@ -232,35 +232,36 @@ color: rgb(98, 63, 184);
     border-top: 3px solid rgb(126, 51, 217);
      box-shadow: 0px 8px 20px rgba(0,0,0,0.1);
 }
-.card{
+.card-section{
     padding-top: 30px;
     height: 300px;
     border-top: 3px solid rgb(76, 93, 220); 
     margin-top: 10px;
     background-color: rgb(240, 239, 238);
     border-bottom: 5px solid rgb(126, 51, 217);
+    position: relative;
+    transition: transform 0.35s ease;
 }
 .icon-img{
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     position: absolute;
-    top: 5px;
     left: 50%;
-     transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 .icon-bg-white {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
     background-color: white;
+    border: 2px solid  rgb(76, 93, 220);
     border-radius: 50%;
     display: flex;
     justify-content: center; 
     align-items: center;     
-    margin: 10px auto; 
+    margin: 19px auto; 
     position: relative;
    
 }
-
 .nav-link:hover{
     border-bottom: 2px solid rgb(0, 255, 51);
     color: rgb(3, 172, 3);
@@ -379,3 +380,20 @@ color: rgb(98, 63, 184);
 .quote-text {
     line-height: 1.8;
 }
+.main-card:hover .pin-icon  {
+    transform: translateY(-5px);
+}
+.pin-icon:hover .main-card  {
+    transform: translateY(-5px);
+}
+.semicircle {
+    position: absolute;
+    top: 0px;
+    left: 15%;
+      width: 71%;
+      height: 100px;   
+     border: 3px solid  rgb(76, 93, 220);
+    background-color: rgb(231, 216, 249);
+     border-top: none;
+      border-radius: 0px 0px 200px 200px; 
+    }
