@@ -100,16 +100,15 @@
       overflow: hidden;
     }
 
-  /* ===== HERO SECTION STYLES ===== */
-.hero-section,
+/* ===== HERO SECTION STYLES ===== */
+.hero-section {
+  position: relative;
+}
+
 .hero-section .carousel,
 .hero-section .carousel-item,
 .hero-section .hero-img {
-  height: 130vh; /* Increased to accommodate cards */
-}
-
-.hero-section {
-  position: relative;
+  height: 115vh; 
 }
 
 .hero-img {
@@ -122,30 +121,30 @@
   background-color: black;
 }
 
-/* ===== HERO CARDS INTEGRATION ===== */
+/* ===== HERO CARDS  ===== */
 .hero-cards-section {
-  position: absolute;
+  position: absolute; 
   bottom: 0;
   left: 0;
   right: 0;
-  background: transparent; /* Transparent background */
+  background: transparent;
   z-index: 10;
-  pointer-events: none; /* Allow clicking through the section */
+  pointer-events: none;
   padding-bottom: 0 !important;
 }
 
 .hero-cards-section .container-fluid {
-  pointer-events: auto; /* Re-enable clicks on cards */
+  pointer-events: auto;
   padding-bottom: 0 !important;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
-/* Remove Bootstrap gaps */
 .hero-cards-section .row.g-3 {
-  --bs-gutter-x: 0;
+  --bs-gutter-x: 1rem;
   --bs-gutter-y: 0;
 }
 
-/* Card wrapper to create space for expansion */
 .hero-card-wrapper {
   position: relative;
   height: 300px;
@@ -169,47 +168,73 @@
   z-index: 1;
 }
 
-/* On hover: expand upward with bottom fixed */
+.hero-card-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1);
+  transition: opacity 0.4s ease;
+  z-index: 0;
+}
+
+.hero-custom-card:hover .hero-card-bg-image {
+  opacity: 1;
+  animation: zoomImage 5s ease-in-out infinite;
+}
+
+@keyframes zoomImage {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .hero-custom-card:hover {
   height: 250px;
   border-color: #00ff88;
   z-index: 10;
 }
 
-/* ===== Top half ===== */
 .hero-custom-card .hero-card-top-half {
-  padding: 1.8rem 1.5rem;
+  padding: 1.5rem 1.2rem;
   transition: all 0.4s ease;
   z-index: 2;
   position: relative;
 }
 
-/* ===== Bottom half ===== */
 .hero-custom-card .hero-card-bottom-half {
   opacity: 0;
   max-height: 0;
   overflow: hidden;
   transition: opacity 0.4s ease, max-height 0.4s ease, padding 0.4s ease;
-  padding: 0 1.5rem;
+  padding: 0 1.2rem;
   background: transparent;
   position: relative;
   z-index: 1;
 }
 
-/* On hover — reveal bottom text with background */
 .hero-custom-card:hover .hero-card-bottom-half {
   opacity: 1;
   max-height: 200px;
-  padding: 1rem 1.5rem 3rem 1.5rem;
-  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem 1.2rem 2.5rem 1.2rem;
+  background: rgba(12, 255, 142, 0.137);
   backdrop-filter: blur(5px);
 }
 
-/* Label Styles */
+
 .hero-card-label {
   display: inline-block;
   padding: 4px 10px;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: bold;
   border-radius: 3px;
   text-align: center;
@@ -236,34 +261,140 @@
   color: #2b2100; 
 }
 
-/* Scale labels slightly on hover */
+
 .hero-custom-card:hover .hero-card-label {
   transform: scale(1.05);
 }
 
-/* Title Styles */
+
 .hero-card-title {
-  margin-top: 1rem;
+  margin-top: 0.8rem;
   font-weight: bold;
   color: #fff;
+  font-size: 1.25rem;
 }
 
-/* Carousel caption adjustments */
+
 .carousel-caption {
   color: #fff;
+  bottom: 30% !important;
+  top: auto !important;
 }
 
 .carousel-buttons .btn {
   margin-top: 1rem;
 }
 
-/* Responsive */
+/* ===== RESPONSIVE BREAKPOINTS ===== */
+
+
+@media (min-width: 1400px) {
+  .carousel-caption {
+    bottom: 32% !important;
+  }
+}
+
+
+@media (max-width: 1399px) {
+  .carousel-caption {
+    bottom: 30% !important;
+  }
+  
+  .carousel-caption h1 {
+    font-size: 2.5rem;
+  }
+}
+
+
+@media (max-width: 1199px) {
+  .carousel-caption {
+    bottom: 28% !important;
+  }
+  
+  .carousel-caption h1 {
+    font-size: 2.2rem;
+  }
+  
+  .carousel-caption p {
+    font-size: 1rem;
+  }
+}
+
+
 @media (max-width: 991px) {
   .hero-cards-section .col-lg-3 { 
     flex: 1 1 50%; 
     max-width: 50%; 
   }
+  
+
+  .hero-section {
+    padding-bottom: 0; 
+  }
+  
+  .hero-cards-section {
+    position: relative;
+    margin-top: -1px; 
+    background: #0a0a3a;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  .carousel-caption {
+    bottom: 20% !important; 
+  }
+  
+  .carousel-caption h1 {
+    font-size: 2rem;
+  }
+  
+  .carousel-caption p {
+    font-size: 0.95rem;
+  }
+  
+  .hero-card-wrapper {
+    height: 280px;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-custom-card {
+    height: 150px;
+  }
+  
+  .hero-custom-card:hover {
+    height: 230px;
+  }
+  
+  .hero-card-title {
+    font-size: 1.1rem;
+  }
 }
+
+
+@media (max-width: 767px) {
+  .carousel-caption {
+    bottom: 15% !important;
+  }
+  
+  .carousel-caption h1 {
+    font-size: 1.75rem;
+  }
+  
+  .carousel-caption p {
+    font-size: 0.9rem;
+  }
+  
+  .carousel-buttons .btn {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .hero-cards-section {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+}
+
 
 @media (max-width: 575px) {
   .hero-cards-section .col-lg-3 { 
@@ -271,20 +402,83 @@
     max-width: 100%; 
   }
   
+  .carousel-caption {
+    bottom: 10% !important;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .carousel-caption h1 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+  
+  .carousel-caption p {
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .carousel-buttons .btn {
+    padding: 0.4rem 1.2rem;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+  }
+  
+  .hero-cards-section {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  
   .hero-card-wrapper {
-    height: 280px;
+    height: 250px;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-custom-card {
+    height: 140px;
   }
   
   .hero-custom-card:hover {
-    height: 280px;
+    height: 220px;
   }
   
-  /* Adjust hero height for mobile */
-  .hero-section,
-  .hero-section .carousel,
-  .hero-section .carousel-item,
-  .hero-section .hero-img {
-    height: 130vh;
+  .hero-custom-card .hero-card-top-half {
+    padding: 1.2rem 1rem;
+  }
+  
+  .hero-card-title {
+    font-size: 1rem;
+    margin-top: 0.6rem;
+  }
+  
+  .hero-card-label {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+  }
+  
+  .hero-custom-card:hover .hero-card-bottom-half {
+    padding: 0.8rem 1rem 2rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+
+@media (max-width: 399px) {
+  .carousel-caption {
+    bottom: 8% !important;
+  }
+  
+  .carousel-caption h1 {
+    font-size: 1.3rem;
+  }
+  
+  .carousel-caption p {
+    font-size: 0.8rem;
+  }
+  
+  .carousel-buttons .btn {
+    padding: 0.35rem 1rem;
+    font-size: 0.8rem;
   }
 }
 
