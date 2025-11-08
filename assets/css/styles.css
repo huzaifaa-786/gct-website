@@ -91,7 +91,7 @@
       left: 0;
       right: 0;
       height: 6px;
-      /* background: linear-gradient(90deg, #2563eb, #0ea5e9); */
+      background: linear-gradient(90deg, #2563eb, #0ea5e9);
     }
 
     .card-img-wrapper {
