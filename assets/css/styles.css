@@ -4,20 +4,16 @@
       padding: 50px 0;
     }
 
-    .card {
+    .card-dep{
       border: none;
       border-radius: 16px;
       overflow: hidden;
-<<<<<<< HEAD
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-      transition: transform 0.6s ease, box-shadow 0.3s ease;
-=======
       transition: transform 0.3s ease, box-shadow 0.3s ease;
->>>>>>> da188cd52868d1b08271d92b85f2c8d18c4345fa
       cursor: pointer;
     }
 
-    .card:hover {
+    .card-dep:hover {
       transform: translateY(-10px);
       box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
     }
@@ -28,7 +24,7 @@
       transition: transform 0.6s ease;
     }
 
-    .card:hover .card-img-top {
+    .card-dep:hover .card-img-top {
       transform: scale(1.1);
     }
 
@@ -40,7 +36,7 @@
       z-index: 1;
     }
 
-    .card:hover .image-overlay {
+    .card-dep:hover .image-overlay {
       background: rgba(0, 0, 0, 0.65);
     }
 
@@ -59,7 +55,7 @@
       line-height: 1.6;
     }
 
-    .card:hover .hover-text {
+    .card-dep:hover .hover-text {
       opacity: 1;
       transform: translateY(0);
     }
@@ -89,7 +85,7 @@
       background: linear-gradient(90deg, #1d4ed8, #0284c7);
     }
 
-    .card::before {
+    .card-dep::before {
       content: "";
       position: absolute;
       top: 0;
@@ -1010,7 +1006,7 @@
     }
 
     /* Card container */
-    .card {
+    .card-why {
       border: none;
       border-radius: 20px;
       overflow: hidden;
@@ -1025,7 +1021,7 @@
       text-align: center;
     }
 
-    .card:hover {
+    .card-why:hover {
       transform: translateY(-10px) scale(1.03);
       box-shadow: 0 30px 40px rgba(0,0,0,0.2);
     }
@@ -1073,16 +1069,16 @@
       transition: all 0.5s 0.2s;
     }
 
-    .card:hover .card-beside {
+    .card-why:hover .card-beside {
       opacity: 1;
     }
 
-    .card:hover .card-beside img {
+    .card-why:hover .card-beside img {
       transform: scale(1.05);
     }
 
-    .card:hover .card-beside h5,
-    .card:hover .card-beside p {
+    .card-why:hover .card-beside h5,
+    .card-why:hover .card-beside p {
       opacity: 1;
       transform: translateY(0);
     }
@@ -1102,7 +1098,7 @@
     }
 
    
-    .card:hover .card-bottom {
+    .card-why:hover .card-bottom {
       opacity: 0;
     }
 
@@ -1135,6 +1131,6 @@
       margin: 0;
     }
 
-    .card:hover .card-front {
+    .card-why:hover .card-front {
       opacity: 0;
     }
