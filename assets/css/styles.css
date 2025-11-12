@@ -8,6 +8,7 @@
   --card-bg: rgba(30, 41, 59, 0.8);
   --border-color: rgba(37, 99, 235, 0.3);
 }
+
 /* Bootstrap Class Overrides */
 .text-primary { color: var(--accent-teal) !important; }
 .bg-primary { background-color: var(--accent-teal) !important; }
@@ -183,8 +184,11 @@ body {
 
 .carousel-caption {
   color: var(--text-light);
-  bottom: 30% !important;
+  top: 35% !important; 
+  bottom: auto !important;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  transform: translateY(-50%); 
 }
 
 .carousel-caption h1 {
@@ -195,6 +199,8 @@ body {
 .carousel-buttons .btn {
   margin-top: 1rem;
   margin-right: 0.5rem;
+  position: relative;
+  z-index: 6;
 }
 
 /* Carousel Controls */
@@ -208,6 +214,7 @@ body {
   transform: translateY(-50%);
   margin: 0 20px;
   opacity: 0.8;
+  z-index: 6;
 }
 
 .carousel-control-prev:hover,
@@ -223,7 +230,7 @@ body {
   left: 0;
   right: 0;
   background: transparent;
-  z-index: 10;
+  z-index: 4;
   pointer-events: none;
   padding-bottom: 0 !important;
 }
@@ -242,7 +249,7 @@ body {
 
 .hero-card-wrapper {
   position: relative;
-  height: 300px;
+  height: 280px;
   margin-bottom: 0;
 }
 
@@ -254,20 +261,24 @@ body {
   background: rgba(45, 55, 72, 0.8);
   color: var(--text-light);
   border: 2px solid var(--border-color);
-  border-radius: 0;
+  border-radius: 8px 8px 0 0;
   cursor: pointer;
   overflow: hidden;
   transition: all 0.4s ease;
-  height: 160px;
-  z-index: 1;
+  height: 140px;
+  z-index: 4;
   backdrop-filter: blur(10px);
+  transform-origin: bottom;
+  max-height: 140px;
 }
 
 .hero-custom-card:hover {
-  height: 250px;
+  height: 200px;
+  transform: translateY(0);
   border-color: var(--accent-teal);
-  z-index: 10;
+  z-index: 4;
   background: rgba(45, 55, 72, 0.95);
+  max-height: 200px;
 }
 
 .hero-card-bg-image {
@@ -301,7 +312,7 @@ body {
 }
 
 .hero-custom-card .hero-card-top-half {
-  padding: 1.5rem 1.2rem;
+  padding: 1rem 1.2rem;
   transition: all 0.4s ease;
   z-index: 2;
   position: relative;
@@ -320,8 +331,8 @@ body {
 
 .hero-custom-card:hover .hero-card-bottom-half {
   opacity: 1;
-  max-height: 200px;
-  padding: 1rem 1.2rem 2.5rem 1.2rem;
+  max-height: 120px;
+  padding: 0.8rem 1.2rem 1.5rem 1.2rem;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(5px);
 }
@@ -364,7 +375,7 @@ body {
   margin-top: 0.8rem;
   font-weight: bold;
   color: var(--text-light);
-  font-size: 1.25rem;
+  font-size: 1.1rem;
 }
 
 /* Departments Section */
@@ -906,7 +917,8 @@ footer .container-fluid {
 /* Responsive Design */
 @media (max-width: 1399px) {
   .carousel-caption {
-    bottom: 30% !important;
+    top: 35% !important;
+    bottom: auto !important;
   }
   
   .carousel-caption h1 {
@@ -916,7 +928,8 @@ footer .container-fluid {
 
 @media (max-width: 1199px) {
   .carousel-caption {
-    bottom: 28% !important;
+    top: 35% !important;
+    bottom: auto !important;
   }
   
   .carousel-caption h1 {
@@ -949,9 +962,8 @@ footer .container-fluid {
     margin-top: 0;
     background: linear-gradient(135deg, var(--secondary-dark), var(--primary-dark));
     padding: 2rem 1rem;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
+    min-height: auto;
+    display: block;
   }
   
   .hero-cards-section .container-fluid {
@@ -959,8 +971,8 @@ footer .container-fluid {
   }
   
   .carousel-caption {
+    top: 30% !important;
     bottom: auto !important;
-    top: 50% !important;
     transform: translateY(-50%);
   }
   
@@ -973,20 +985,31 @@ footer .container-fluid {
   }
   
   .hero-card-wrapper {
-    height: 280px;
+    height: auto;
     margin-bottom: 1.5rem;
   }
   
   .hero-custom-card {
-    height: 150px;
+    position: relative;
+    height: auto;
+    min-height: 180px;
+    transform: none !important;
   }
   
   .hero-custom-card:hover {
-    height: 230px;
+    height: auto;
+    transform: none !important;
   }
   
   .hero-card-title {
     font-size: 1.1rem;
+  }
+
+  .hero-custom-card .hero-card-bottom-half {
+    opacity: 1;
+    max-height: none;
+    padding: 1rem 1.2rem 1.5rem 1.2rem;
+    background: rgba(255, 255, 255, 0.05);
   }
 
   .navbar-floating {
@@ -1031,11 +1054,9 @@ footer .container-fluid {
   }
   
   .hero-cards-section {
-    min-height: 100vh;
+    min-height: auto;
     padding: 1.5rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
   }
   
   .carousel-caption {
@@ -1063,16 +1084,18 @@ footer .container-fluid {
   }
   
   .hero-card-wrapper {
-    height: 220px;
+    height: auto;
     margin-bottom: 1.2rem;
   }
   
   .hero-custom-card {
-    height: 140px;
+    height: auto;
+    min-height: 160px;
   }
   
   .hero-custom-card:hover {
-    height: 200px;
+    height: auto;
+    transform: none !important;
   }
   
   .hero-custom-card .hero-card-top-half {
@@ -1089,8 +1112,11 @@ footer .container-fluid {
     padding: 3px 7px;
   }
   
-  .hero-custom-card:hover .hero-card-bottom-half {
-    padding: 0.7rem 0.9rem 1.5rem 0.9rem;
+  .hero-custom-card .hero-card-bottom-half {
+    opacity: 1;
+    max-height: none;
+    padding: 0.5rem 0.9rem 1rem 0.9rem;
+    background: rgba(255, 255, 255, 0.05);
     font-size: 0.8rem;
   }
 
