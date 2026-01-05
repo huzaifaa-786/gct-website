@@ -1,6 +1,6 @@
 /**
  * GCT Bhakkar - Navbar Component
- * Dynamic header and navigation rendering
+ * Dynamic header and navigation with working dropdown
  */
 
 class Navbar {
@@ -48,25 +48,25 @@ class Navbar {
 
             if (item.dropdown) {
                 return `
-          <li class="nav-item nav-dropdown">
-            <a class="nav-link dropdown-toggle ${activeClass}" href="${item.href}">
-              ${item.name}
-              <i class="fas fa-chevron-down"></i>
-            </a>
-            <ul class="dropdown-menu">
-              ${item.dropdown.map(subItem => `
-                <li><a class="dropdown-item" href="${subItem.href}">${subItem.name}</a></li>
-              `).join('')}
-            </ul>
-          </li>
-        `;
+                    <li class="nav-item nav-dropdown">
+                        <a class="nav-link ${activeClass}" href="${item.href}">
+                            ${item.name}
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            ${item.dropdown.map(subItem => `
+                                <li><a class="dropdown-item" href="${subItem.href}">${subItem.name}</a></li>
+                            `).join('')}
+                        </ul>
+                    </li>
+                `;
             }
 
             return `
-        <li class="nav-item">
-          <a class="nav-link ${activeClass}" href="${item.href}">${item.name}</a>
-        </li>
-      `;
+                <li class="nav-item">
+                    <a class="nav-link ${activeClass}" href="${item.href}">${item.name}</a>
+                </li>
+            `;
         }).join('');
     }
 
@@ -75,44 +75,45 @@ class Navbar {
         if (!container) return;
 
         container.innerHTML = `
-      <nav class="navbar" id="mainNavbar">
-        <div class="navbar-container">
-          <!-- Brand -->
-          <a class="navbar-brand" href="${this.basePath}index.html">
-            <img src="${this.basePath}assets/favicon/favicon.png" alt="GCT Logo">
-            <span>GCT Bhakkar</span>
-          </a>
-          
-          <!-- Mobile Toggle -->
-          <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation">
-            <span class="navbar-toggle-bar"></span>
-            <span class="navbar-toggle-bar"></span>
-            <span class="navbar-toggle-bar"></span>
-          </button>
-          
-          <!-- Navigation -->
-          <div class="navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav">
-              ${this.renderNavItems()}
-            </ul>
-            
-            <!-- CTA Button -->
-            <div class="navbar-cta">
-              <a href="${this.basePath}pages/admissions.html#apply" class="btn btn-primary btn-sm">Apply Now</a>
-            </div>
-          </div>
-        </div>
-      </nav>
-    `;
+            <nav class="navbar" id="mainNavbar">
+                <div class="navbar-container">
+                    <!-- Brand -->
+                    <a class="navbar-brand" href="${this.basePath}index.html">
+                        <img src="${this.basePath}assets/favicon/favicon.png" alt="GCT Logo">
+                        <span>GCT Bhakkar</span>
+                    </a>
+                    
+                    <!-- Mobile Toggle -->
+                    <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation">
+                        <span class="navbar-toggle-bar"></span>
+                        <span class="navbar-toggle-bar"></span>
+                        <span class="navbar-toggle-bar"></span>
+                    </button>
+                    
+                    <!-- Navigation -->
+                    <div class="navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav">
+                            ${this.renderNavItems()}
+                        </ul>
+                        
+                        <!-- CTA Button -->
+                        <div class="navbar-cta">
+                            <a href="${this.basePath}pages/admissions.html#apply" class="btn btn-primary">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        `;
     }
 
     attachEventListeners() {
-        // Mobile toggle
         const toggle = document.getElementById('navbarToggle');
         const collapse = document.getElementById('navbarCollapse');
 
+        // Mobile toggle
         if (toggle && collapse) {
-            toggle.addEventListener('click', () => {
+            toggle.addEventListener('click', (e) => {
+                e.stopPropagation();
                 toggle.classList.toggle('active');
                 collapse.classList.toggle('show');
             });
@@ -126,22 +127,42 @@ class Navbar {
             }
         });
 
-        // Mobile dropdown toggle
+        // Mobile dropdown toggle (click to expand on mobile)
         const dropdowns = document.querySelectorAll('.nav-dropdown');
         dropdowns.forEach(dropdown => {
-            const toggle = dropdown.querySelector('.dropdown-toggle');
-            toggle?.addEventListener('click', (e) => {
+            const link = dropdown.querySelector('.nav-link');
+
+            link?.addEventListener('click', (e) => {
+                // Only prevent default on mobile
                 if (window.innerWidth < 992) {
                     e.preventDefault();
+                    e.stopPropagation();
+
+                    // Close other dropdowns
+                    dropdowns.forEach(d => {
+                        if (d !== dropdown) d.classList.remove('open');
+                    });
+
                     dropdown.classList.toggle('open');
                 }
             });
         });
 
-        // Close mobile menu on link click
-        const navLinks = document.querySelectorAll('.nav-link:not(.dropdown-toggle)');
-        navLinks.forEach(link => {
+        // Close mobile menu on nav link click (except dropdown toggles)
+        const regularLinks = document.querySelectorAll('.navbar-nav .nav-link:not(.nav-dropdown .nav-link)');
+        regularLinks.forEach(link => {
             link.addEventListener('click', () => {
+                if (window.innerWidth < 992) {
+                    toggle?.classList.remove('active');
+                    collapse?.classList.remove('show');
+                }
+            });
+        });
+
+        // Close mobile menu on dropdown item click
+        const dropdownItems = document.querySelectorAll('.dropdown-item');
+        dropdownItems.forEach(item => {
+            item.addEventListener('click', () => {
                 if (window.innerWidth < 992) {
                     toggle?.classList.remove('active');
                     collapse?.classList.remove('show');
