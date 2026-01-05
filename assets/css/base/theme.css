@@ -581,6 +581,184 @@ img:not([loading="lazy"]) {
     color: #334155 !important;
 }
 
+/* ============================================= */
+/* ===== STYLES.CSS COMPONENT OVERRIDES ===== */
+/* ============================================= */
+
+/* ----- Campus Life Section ----- */
+[data-theme="light"] .campus-life {
+    background: #f8fafc !important;
+}
+
+[data-theme="light"] .campus-life .section-title {
+    color: #0f172a !important;
+}
+
+[data-theme="light"] .campus-cards {
+    background: rgba(241, 245, 249, 0.8) !important;
+    border-color: rgba(100, 116, 139, 0.2) !important;
+}
+
+[data-theme="light"] .campus-card {
+    background: #ffffff !important;
+    border-color: rgba(100, 116, 139, 0.2) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme="light"] .campus-card:hover {
+    box-shadow: 0 15px 35px rgba(59, 130, 246, 0.2) !important;
+    border-color: #3b82f6 !important;
+}
+
+[data-theme="light"] .campus-card p {
+    color: #475569 !important;
+}
+
+[data-theme="light"] .red-title {
+    background: #3b82f6 !important;
+    color: #ffffff !important;
+}
+
+[data-theme="light"] .read-link {
+    color: #3b82f6 !important;
+}
+
+[data-theme="light"] .read-link:hover {
+    color: #f59e0b !important;
+}
+
+/* ----- Card Why (Why Choose Us) ----- */
+[data-theme="light"] .card-why {
+    background: #ffffff !important;
+    border-color: rgba(100, 116, 139, 0.2) !important;
+}
+
+[data-theme="light"] .card-why:hover {
+    box-shadow: 0 30px 50px rgba(59, 130, 246, 0.2) !important;
+    border-color: #3b82f6 !important;
+}
+
+[data-theme="light"] .card-beside {
+    background: linear-gradient(135deg, #3b82f6, #1e40af) !important;
+}
+
+[data-theme="light"] .card-beside h5,
+[data-theme="light"] .card-beside p {
+    color: #ffffff !important;
+}
+
+[data-theme="light"] .card-bottom h6 {
+    color: #0f172a !important;
+}
+
+/* ----- Principal Message Section ----- */
+[data-theme="light"] .principal-message {
+    background: linear-gradient(135deg, #f1f5f9, #e2e8f0) !important;
+}
+
+[data-theme="light"] .principal-card {
+    background: #ffffff !important;
+    border-color: rgba(100, 116, 139, 0.2) !important;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1) !important;
+}
+
+[data-theme="light"] .principal-card h3,
+[data-theme="light"] .principal-card h4,
+[data-theme="light"] .principal-card h5 {
+    color: #0f172a !important;
+}
+
+[data-theme="light"] .principal-card p {
+    color: #475569 !important;
+}
+
+[data-theme="light"] .principal-card .text-muted {
+    color: #64748b !important;
+}
+
+/* ----- Hero Carousel (Home Page) ----- */
+[data-theme="light"] .hero-section {
+    background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%) !important;
+}
+
+[data-theme="light"] .hero-bg-overlay {
+    background: linear-gradient(180deg, rgba(248, 250, 252, 0.3) 0%, rgba(226, 232, 240, 0.7) 100%) !important;
+}
+
+[data-theme="light"] .carousel-caption {
+    background: rgba(255, 255, 255, 0.9) !important;
+    padding: 2rem !important;
+    border-radius: 1rem !important;
+}
+
+[data-theme="light"] .carousel-caption h1 {
+    color: #0f172a !important;
+    text-shadow: none !important;
+}
+
+[data-theme="light"] .carousel-caption p {
+    color: #475569 !important;
+    text-shadow: none !important;
+}
+
+/* ----- Footer Headings ----- */
+[data-theme="light"] .footer h4,
+[data-theme="light"] .footer h5,
+[data-theme="light"] .footer h6,
+[data-theme="light"] [data-footer] h4,
+[data-theme="light"] [data-footer] h5,
+[data-theme="light"] [data-footer] h6 {
+    color: #e2e8f0 !important;
+}
+
+[data-theme="light"] .footer p,
+[data-theme="light"] [data-footer] p {
+    color: #94a3b8 !important;
+}
+
+/* ----- Technology Program Cards ----- */
+[data-theme="light"] .card-department,
+[data-theme="light"] .program-card {
+    background: #ffffff !important;
+    border-color: rgba(100, 116, 139, 0.2) !important;
+}
+
+[data-theme="light"] .card-department h4,
+[data-theme="light"] .card-department h5,
+[data-theme="light"] .program-card h4,
+[data-theme="light"] .program-card h5 {
+    color: #0f172a !important;
+}
+
+[data-theme="light"] .card-department p,
+[data-theme="light"] .program-card p {
+    color: #475569 !important;
+}
+
+/* ----- All Cards Text ----- */
+[data-theme="light"] .card h2,
+[data-theme="light"] .card h3,
+[data-theme="light"] .card h4,
+[data-theme="light"] .card h5,
+[data-theme="light"] .card h6 {
+    color: #0f172a !important;
+}
+
+[data-theme="light"] .card p,
+[data-theme="light"] .card li,
+[data-theme="light"] .card .card-text {
+    color: #475569 !important;
+}
+
+/* ----- Fix Hero Gradient Overlays ----- */
+[data-theme="light"] .hero .hero-bg-gradient {
+    background: linear-gradient(135deg, rgba(219, 234, 254, 0.95) 0%, rgba(224, 231, 255, 0.95) 50%, rgba(199, 210, 254, 0.95) 100%) !important;
+}
+
+[data-theme="light"] .hero-page .hero-bg-gradient {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.95), rgba(29, 78, 216, 0.95)) !important;
+}
+
 /* ===== PERFORMANCE OPTIMIZATIONS ===== */
 
 .card,
