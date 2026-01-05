@@ -1,9 +1,9 @@
 /**
- * GCT Bhakkar - Navbar Component
- * Dynamic header and navigation with working dropdown
+ * GCT Bhakkar - Header Component
+ * Complete header with top bar and navbar
  */
 
-class Navbar {
+class Header {
     constructor(options = {}) {
         this.container = options.container || 'header';
         this.basePath = options.basePath || './';
@@ -14,7 +14,6 @@ class Navbar {
     init() {
         this.render();
         this.attachEventListeners();
-        this.handleScroll();
     }
 
     getNavigation() {
@@ -26,11 +25,11 @@ class Navbar {
                 href: `${this.basePath}pages/programs.html`,
                 id: 'programs',
                 dropdown: [
-                    { name: 'Computer Information Technology', href: `${this.basePath}pages/departments/cit.html` },
-                    { name: 'Electrical Technology', href: `${this.basePath}pages/departments/electrical.html` },
-                    { name: 'Mechanical Technology', href: `${this.basePath}pages/departments/mechanical.html` },
-                    { name: 'Civil Technology', href: `${this.basePath}pages/departments/civil.html` },
-                    { name: 'Electronics Technology', href: `${this.basePath}pages/departments/electronics.html` }
+                    { name: 'Computer Information Technology', href: `${this.basePath}pages/departments/cit.html`, icon: 'fa-laptop-code' },
+                    { name: 'Electrical Technology', href: `${this.basePath}pages/departments/electrical.html`, icon: 'fa-bolt' },
+                    { name: 'Mechanical Technology', href: `${this.basePath}pages/departments/mechanical.html`, icon: 'fa-cogs' },
+                    { name: 'Civil Technology', href: `${this.basePath}pages/departments/civil.html`, icon: 'fa-building' },
+                    { name: 'Electronics Technology', href: `${this.basePath}pages/departments/electronics.html`, icon: 'fa-microchip' }
                 ]
             },
             { name: 'Admissions', href: `${this.basePath}pages/admissions.html`, id: 'admissions' },
@@ -48,14 +47,19 @@ class Navbar {
 
             if (item.dropdown) {
                 return `
-                    <li class="nav-item nav-dropdown">
+                    <li class="nav-item dropdown">
                         <a class="nav-link ${activeClass}" href="${item.href}">
                             ${item.name}
-                            <i class="fas fa-chevron-down"></i>
+                            <i class="fas fa-chevron-down dropdown-arrow"></i>
                         </a>
                         <ul class="dropdown-menu">
                             ${item.dropdown.map(subItem => `
-                                <li><a class="dropdown-item" href="${subItem.href}">${subItem.name}</a></li>
+                                <li>
+                                    <a class="dropdown-item" href="${subItem.href}">
+                                        <i class="fas ${subItem.icon}"></i>
+                                        ${subItem.name}
+                                    </a>
+                                </li>
                             `).join('')}
                         </ul>
                     </li>
@@ -75,12 +79,44 @@ class Navbar {
         if (!container) return;
 
         container.innerHTML = `
-            <nav class="navbar" id="mainNavbar">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <div class="top-bar-container">
+                    <div class="top-bar-left">
+                        <div class="top-bar-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Main Road, Bhakkar, Punjab</span>
+                        </div>
+                        <div class="top-bar-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <a href="tel:+924531234567">+92 453 123 4567</a>
+                        </div>
+                        <div class="top-bar-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info@gctbhakkar.edu.pk">info@gctbhakkar.edu.pk</a>
+                        </div>
+                    </div>
+                    <div class="top-bar-right">
+                        <div class="top-bar-social">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Navbar -->
+            <nav class="main-navbar" id="mainNavbar">
                 <div class="navbar-container">
                     <!-- Brand -->
                     <a class="navbar-brand" href="${this.basePath}index.html">
-                        <img src="${this.basePath}assets/favicon/favicon.png" alt="GCT Logo">
-                        <span>GCT Bhakkar</span>
+                        <img src="${this.basePath}assets/favicon/favicon.png" alt="GCT Bhakkar Logo">
+                        <div class="navbar-brand-text">
+                            <span class="navbar-brand-name">GCT Bhakkar</span>
+                            <span class="navbar-brand-tagline">Excellence in Technical Education</span>
+                        </div>
                     </a>
                     
                     <!-- Mobile Toggle -->
@@ -89,16 +125,19 @@ class Navbar {
                         <span class="navbar-toggle-bar"></span>
                         <span class="navbar-toggle-bar"></span>
                     </button>
+
+                    <!-- Mobile Overlay -->
+                    <div class="navbar-overlay" id="navbarOverlay"></div>
                     
-                    <!-- Navigation -->
-                    <div class="navbar-collapse" id="navbarCollapse">
+                    <!-- Navigation Wrapper -->
+                    <div class="navbar-nav-wrapper" id="navbarNavWrapper">
                         <ul class="navbar-nav">
                             ${this.renderNavItems()}
                         </ul>
                         
                         <!-- CTA Button -->
                         <div class="navbar-cta">
-                            <a href="${this.basePath}pages/admissions.html#apply" class="btn btn-primary">Apply Now</a>
+                            <a href="${this.basePath}pages/admissions.html" class="btn">Apply Now</a>
                         </div>
                     </div>
                 </div>
@@ -108,35 +147,37 @@ class Navbar {
 
     attachEventListeners() {
         const toggle = document.getElementById('navbarToggle');
-        const collapse = document.getElementById('navbarCollapse');
+        const navWrapper = document.getElementById('navbarNavWrapper');
+        const overlay = document.getElementById('navbarOverlay');
 
         // Mobile toggle
-        if (toggle && collapse) {
-            toggle.addEventListener('click', (e) => {
-                e.stopPropagation();
+        if (toggle && navWrapper) {
+            toggle.addEventListener('click', () => {
                 toggle.classList.toggle('active');
-                collapse.classList.toggle('show');
+                navWrapper.classList.toggle('show');
+                overlay?.classList.toggle('show');
+                document.body.style.overflow = navWrapper.classList.contains('show') ? 'hidden' : '';
             });
         }
 
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.navbar') && collapse?.classList.contains('show')) {
+        // Close on overlay click
+        if (overlay) {
+            overlay.addEventListener('click', () => {
                 toggle?.classList.remove('active');
-                collapse?.classList.remove('show');
-            }
-        });
+                navWrapper?.classList.remove('show');
+                overlay.classList.remove('show');
+                document.body.style.overflow = '';
+            });
+        }
 
-        // Mobile dropdown toggle (click to expand on mobile)
-        const dropdowns = document.querySelectorAll('.nav-dropdown');
+        // Mobile dropdown toggle
+        const dropdowns = document.querySelectorAll('.nav-item.dropdown');
         dropdowns.forEach(dropdown => {
             const link = dropdown.querySelector('.nav-link');
 
             link?.addEventListener('click', (e) => {
-                // Only prevent default on mobile
-                if (window.innerWidth < 992) {
+                if (window.innerWidth <= 1024) {
                     e.preventDefault();
-                    e.stopPropagation();
 
                     // Close other dropdowns
                     dropdowns.forEach(d => {
@@ -148,53 +189,39 @@ class Navbar {
             });
         });
 
-        // Close mobile menu on nav link click (except dropdown toggles)
-        const regularLinks = document.querySelectorAll('.navbar-nav .nav-link:not(.nav-dropdown .nav-link)');
-        regularLinks.forEach(link => {
+        // Close mobile menu on link click
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link:not(.dropdown .nav-link), .dropdown-item');
+        navLinks.forEach(link => {
             link.addEventListener('click', () => {
-                if (window.innerWidth < 992) {
+                if (window.innerWidth <= 1024) {
                     toggle?.classList.remove('active');
-                    collapse?.classList.remove('show');
+                    navWrapper?.classList.remove('show');
+                    overlay?.classList.remove('show');
+                    document.body.style.overflow = '';
                 }
             });
         });
 
-        // Close mobile menu on dropdown item click
-        const dropdownItems = document.querySelectorAll('.dropdown-item');
-        dropdownItems.forEach(item => {
-            item.addEventListener('click', () => {
-                if (window.innerWidth < 992) {
-                    toggle?.classList.remove('active');
-                    collapse?.classList.remove('show');
-                }
-            });
-        });
-    }
-
-    handleScroll() {
-        const navbar = document.getElementById('mainNavbar');
-        if (!navbar) return;
-
-        const scrollHandler = () => {
-            if (window.scrollY > 100) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 1024) {
+                toggle?.classList.remove('active');
+                navWrapper?.classList.remove('show');
+                overlay?.classList.remove('show');
+                document.body.style.overflow = '';
+                dropdowns.forEach(d => d.classList.remove('open'));
             }
-        };
-
-        window.addEventListener('scroll', scrollHandler);
-        scrollHandler(); // Initial check
+        });
     }
 }
 
-// Auto-initialize if data attribute is present
+// Auto-initialize
 document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('[data-navbar]');
     if (header) {
         const basePath = header.dataset.basePath || './';
         const currentPage = header.dataset.currentPage || 'home';
-        new Navbar({
+        new Header({
             container: '[data-navbar]',
             basePath,
             currentPage
@@ -202,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Export for manual initialization
+// Export
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = Navbar;
+    module.exports = Header;
 }
