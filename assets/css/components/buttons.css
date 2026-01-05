@@ -1,0 +1,176 @@
+/*
+ * GCT Bhakkar - Button Component Styles
+ * Reusable button variants and states
+ */
+
+/* ===== BASE BUTTON ===== */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-6);
+    font-size: var(--text-base);
+    font-weight: var(--font-medium);
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: var(--radius-lg);
+    border: var(--border-width-default) solid transparent;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    text-decoration: none;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ===== BUTTON SIZES ===== */
+
+.btn-sm {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-sm);
+    border-radius: var(--radius-md);
+}
+
+.btn-lg {
+    padding: var(--space-4) var(--space-8);
+    font-size: var(--text-lg);
+    border-radius: var(--radius-xl);
+}
+
+/* ===== PRIMARY BUTTON ===== */
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--color-accent-primary), #1d4ed8);
+    color: white;
+    border-color: var(--color-accent-primary);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #1d4ed8, var(--color-accent-primary));
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* ===== SECONDARY BUTTON ===== */
+
+.btn-secondary {
+    background: var(--color-secondary-dark);
+    color: var(--color-text-primary);
+    border-color: var(--color-border-default);
+}
+
+.btn-secondary:hover {
+    background: var(--color-tertiary-dark);
+    border-color: var(--color-accent-primary);
+    transform: translateY(-2px);
+}
+
+/* ===== OUTLINE BUTTONS ===== */
+
+.btn-outline-primary {
+    background: transparent;
+    color: var(--color-accent-primary);
+    border-color: var(--color-accent-primary);
+}
+
+.btn-outline-primary:hover {
+    background: var(--color-accent-primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-outline-light {
+    background: transparent;
+    color: var(--color-text-primary);
+    border-color: var(--color-text-primary);
+}
+
+.btn-outline-light:hover {
+    background: var(--color-text-primary);
+    color: var(--color-primary-dark);
+    transform: translateY(-2px);
+}
+
+/* ===== GHOST BUTTON ===== */
+
+.btn-ghost {
+    background: transparent;
+    color: var(--color-text-primary);
+    border-color: transparent;
+}
+
+.btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-accent-primary);
+}
+
+/* ===== ACCENT BUTTON ===== */
+
+.btn-accent {
+    background: linear-gradient(135deg, var(--color-accent-gold), #d97706);
+    color: var(--color-primary-dark);
+    border-color: var(--color-accent-gold);
+}
+
+.btn-accent:hover {
+    background: linear-gradient(135deg, #d97706, var(--color-accent-gold));
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+}
+
+/* ===== ICON BUTTON ===== */
+
+.btn-icon {
+    padding: var(--space-3);
+    border-radius: var(--radius-full);
+}
+
+.btn-icon.btn-sm {
+    padding: var(--space-2);
+}
+
+.btn-icon.btn-lg {
+    padding: var(--space-4);
+}
+
+/* ===== BUTTON WITH ICON ===== */
+
+.btn i,
+.btn svg {
+    font-size: 1.1em;
+}
+
+/* ===== BUTTON GROUP ===== */
+
+.btn-group {
+    display: flex;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+}
+
+.btn-group.btn-group-center {
+    justify-content: center;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 576px) {
+    .btn {
+        padding: var(--space-3) var(--space-5);
+        font-size: var(--text-sm);
+    }
+
+    .btn-lg {
+        padding: var(--space-3) var(--space-6);
+        font-size: var(--text-base);
+    }
+}

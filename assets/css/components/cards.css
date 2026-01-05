@@ -1,0 +1,268 @@
+/*
+ * GCT Bhakkar - Card Component Styles
+ * Reusable card patterns for content display
+ */
+
+/* ===== BASE CARD ===== */
+
+.card {
+    background: var(--color-bg-card);
+    border: var(--border-width-thin) solid var(--color-border-default);
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    transition: all var(--transition-base);
+    backdrop-filter: blur(10px);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-glow);
+    border-color: var(--color-accent-primary);
+}
+
+/* ===== CARD IMAGE ===== */
+
+.card-img-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.card:hover .card-img {
+    transform: scale(1.1);
+}
+
+.card-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: var(--color-bg-overlay);
+    transition: background var(--transition-base);
+}
+
+.card:hover .card-img-overlay {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/* ===== CARD BODY ===== */
+
+.card-body {
+    padding: var(--space-6);
+}
+
+.card-title {
+    font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-3);
+}
+
+.card-text {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-4);
+}
+
+/* ===== CARD HEADER/FOOTER ===== */
+
+.card-header {
+    padding: var(--space-4) var(--space-6);
+    background: rgba(0, 0, 0, 0.1);
+    border-bottom: var(--border-width-thin) solid var(--color-border-muted);
+}
+
+.card-footer {
+    padding: var(--space-4) var(--space-6);
+    background: rgba(0, 0, 0, 0.1);
+    border-top: var(--border-width-thin) solid var(--color-border-muted);
+}
+
+/* ===== FEATURE CARD ===== */
+
+.card-feature {
+    text-align: center;
+    padding: var(--space-8);
+}
+
+.card-feature-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--space-6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-secondary));
+    border-radius: var(--radius-2xl);
+    font-size: var(--text-3xl);
+    color: white;
+    transition: transform var(--transition-base);
+}
+
+.card-feature:hover .card-feature-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* ===== DEPARTMENT CARD ===== */
+
+.card-department {
+    position: relative;
+}
+
+.card-department::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-accent-primary), var(--color-accent-gold));
+    z-index: 1;
+}
+
+.card-department .hover-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--space-6);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    color: white;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all var(--transition-base);
+}
+
+.card-department:hover .hover-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== STAT CARD ===== */
+
+.card-stat {
+    text-align: center;
+    padding: var(--space-8);
+    background: linear-gradient(135deg, var(--color-secondary-dark), var(--color-primary-dark));
+}
+
+.card-stat-number {
+    font-size: var(--text-5xl);
+    font-weight: var(--font-extrabold);
+    color: var(--color-accent-primary);
+    margin-bottom: var(--space-2);
+}
+
+.card-stat-label {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wider);
+}
+
+/* ===== TESTIMONIAL CARD ===== */
+
+.card-testimonial {
+    text-align: center;
+    padding: var(--space-8);
+}
+
+.card-testimonial-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--radius-full);
+    object-fit: cover;
+    margin: 0 auto var(--space-4);
+    border: 3px solid var(--color-accent-primary);
+}
+
+.card-testimonial-quote {
+    font-style: italic;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-4);
+}
+
+.card-testimonial-name {
+    font-weight: var(--font-semibold);
+    color: var(--color-text-primary);
+}
+
+.card-testimonial-role {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+}
+
+/* ===== PRICE CARD ===== */
+
+.card-price {
+    text-align: center;
+    padding: var(--space-8);
+}
+
+.card-price-header {
+    margin-bottom: var(--space-6);
+}
+
+.card-price-title {
+    font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+    color: var(--color-accent-primary);
+}
+
+.card-price-amount {
+    font-size: var(--text-4xl);
+    font-weight: var(--font-bold);
+    color: var(--color-text-primary);
+}
+
+.card-price-period {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+}
+
+.card-price-features {
+    text-align: left;
+    margin-bottom: var(--space-6);
+}
+
+.card-price-features li {
+    padding: var(--space-2) 0;
+    color: var(--color-text-secondary);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.card-price-features li i {
+    color: var(--color-accent-teal);
+}
+
+/* ===== GLASS CARD ===== */
+
+.card-glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: var(--border-width-thin) solid rgba(255, 255, 255, 0.1);
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+    .card-body {
+        padding: var(--space-4);
+    }
+
+    .card-feature {
+        padding: var(--space-6);
+    }
+
+    .card-feature-icon {
+        width: 60px;
+        height: 60px;
+        font-size: var(--text-2xl);
+    }
+}

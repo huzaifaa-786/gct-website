@@ -1,53 +1,107 @@
-# GCT Bhakkar Website Design
+# GCT Bhakkar - Government College of Technology Website
 
-A clean, responsive HTML/CSS website design for GCT Bhakkar, showcasing [about, programs, contact or other relevant sections] — built as a static site with standard web technologies.
+![GCT Bhakkar](./assets/favicon/favicon.png)
 
-## 📄 Table of Contents
+A modern, responsive website for Government College of Technology, Bhakkar. Built with a modular architecture featuring reusable components and a consistent design system.
 
-- [About](#about)  
-- [Features](#features)  
-- [Tech Stack](#tech-stack)  
-- [Getting Started](#getting-started)  
-- [Usage](#usage)  
-- [Project Structure](#project-structure)  
-- [Contributors](#contributors)  
-- [License](#license)  
+## 🌟 Features
 
-## About
+- **Modern Design** - Clean, professional UI with smooth animations
+- **Responsive** - Mobile-first design that works on all devices
+- **Dynamic Components** - Reusable navbar and footer via JavaScript
+- **CSS Design System** - Consistent theming with CSS variables
+- **Scroll Animations** - Engaging animations on scroll
+- **Counter Animations** - Animated statistics when visible
+- **SEO Optimized** - Proper meta tags and semantic HTML
 
-This project is a static website for GCT Bhakkar, designed to provide information about the institute — its programs, history, departments, and related resources. The design aims to be simple, mobile-responsive, and easy to read/use.
+## 🛠️ Tech Stack
 
-## Features
+- **HTML5** - Semantic markup
+- **CSS3** - Custom properties, Flexbox, Grid
+- **JavaScript** - Vanilla JS for components
+- **Bootstrap 5** - Layout utilities
+- **Font Awesome** - Icons
 
-- Responsive layout for desktop and mobile  
-- Clean HTML & CSS (no heavy frameworks)  
-- Simple navigation across pages (home, about, programs, etc.)  
-- Ready for deployment as a static website  
+## 📁 Project Structure
 
-## Tech Stack
-
-- HTML5  
-- CSS3  
-- (Optional) JavaScript — if any interactivity or enhancements needed  
-
-## Getting Started
-
-To view or develop the site locally:
-
-1. Clone the repository  
-   ```bash git clone https://github.com/Abdul-Rasheed-Talal/gct-bhakkar-website-design.git ```
-2. Open index.html in your browser, or run a local HTTP server (recommended) for better experience.
-
-3. Edit HTML/CSS files inside the project directory as needed.
-
-## Project Structure
 ```
-/
-├── assets/       # images, logos, stylesheets, etc.
-├── index.html    # main landing page
-├── about.html    # about page
-├── programs.html # programs page (or similar)
-├── README.md     # project documentation (this file)
-└── …             # additional pages or assets
+gct-bhakkar-website-design/
+├── index.html                  # Home page
+├── pages/
+│   ├── about.html             # About Us
+│   ├── programs.html          # All Programs
+│   ├── admissions.html        # Admissions Info
+│   ├── contact.html           # Contact Page
+│   ├── campus-life.html       # Campus Life
+│   └── departments/           # Department pages
+│       ├── cit.html
+│       ├── electrical.html
+│       ├── mechanical.html
+│       ├── civil.html
+│       └── electronics.html
+├── assets/
+│   ├── css/                   # Stylesheets
+│   │   ├── base/              # Variables, reset, typography
+│   │   ├── components/        # UI components
+│   │   ├── layouts/           # Section layouts
+│   │   └── main.css           # Entry point
+│   ├── js/                    # JavaScript
+│   │   ├── components/        # Dynamic components
+│   │   ├── utils/             # Utilities
+│   │   └── main.js            # Entry point
+│   └── images/                # Image assets
+└── README.md
 ```
-made with 🧡 by little devs
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js (for development server)
+- Modern web browser
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/Abdul-Rasheed-Talal/gct-bhakkar-website-design.git
+cd gct-bhakkar-website-design
+```
+
+2. Start a development server:
+```bash
+npx http-server -p 5500
+```
+
+3. Open in browser:
+```
+http://127.0.0.1:5500
+```
+
+## 📄 Pages
+
+| Page | Description |
+|------|-------------|
+| Home | Hero carousel, departments, statistics, campus life |
+| About | Mission, vision, facilities |
+| Programs | All departments with comparison |
+| Admissions | Process, requirements, fees |
+| Contact | Form, map, contact info |
+| Campus Life | Facilities and activities |
+| Departments | Individual pages for each technology |
+
+## 👥 Team
+
+- **Abdul Rasheed** - Project Lead, Header/Footer, Index Page
+- **Ali Raza** - Departments Section
+- **Imran** - Why Choose Us Section
+- **Naseer Nawaz** - Campus Life Section
+- **Hammad Ali** - Footer Design
+
+## 📝 License
+
+This project is created for educational purposes for GCT Bhakkar.
+
+---
+
+**Government College of Technology, Bhakkar**  
+*Excellence in Technical Education*

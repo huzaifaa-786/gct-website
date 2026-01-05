@@ -1,0 +1,236 @@
+/*
+ * GCT Bhakkar - Typography System
+ * Font definitions and text utilities
+ */
+
+/* ===== FONT IMPORTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ===== BASE TYPOGRAPHY ===== */
+
+body {
+    font-family: var(--font-primary);
+    font-size: var(--text-base);
+    font-weight: var(--font-normal);
+    line-height: var(--leading-normal);
+    color: var(--color-text-primary);
+}
+
+/* ===== HEADINGS ===== */
+
+h1,
+.h1 {
+    font-size: var(--text-5xl);
+    font-weight: var(--font-extrabold);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tight);
+    color: var(--color-text-primary);
+}
+
+h2,
+.h2 {
+    font-size: var(--text-4xl);
+    font-weight: var(--font-bold);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tight);
+    color: var(--color-text-primary);
+}
+
+h3,
+.h3 {
+    font-size: var(--text-3xl);
+    font-weight: var(--font-bold);
+    line-height: var(--leading-snug);
+    color: var(--color-text-primary);
+}
+
+h4,
+.h4 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-semibold);
+    line-height: var(--leading-snug);
+    color: var(--color-text-primary);
+}
+
+h5,
+.h5 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+    line-height: var(--leading-normal);
+    color: var(--color-text-primary);
+}
+
+h6,
+.h6 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-medium);
+    line-height: var(--leading-normal);
+    color: var(--color-text-primary);
+}
+
+/* ===== PARAGRAPHS ===== */
+
+p {
+    margin-bottom: var(--space-4);
+    color: var(--color-text-secondary);
+}
+
+.lead {
+    font-size: var(--text-xl);
+    font-weight: var(--font-light);
+    line-height: var(--leading-relaxed);
+    color: var(--color-text-secondary);
+}
+
+.small {
+    font-size: var(--text-sm);
+}
+
+/* ===== TEXT UTILITIES ===== */
+
+.text-primary {
+    color: var(--color-text-primary) !important;
+}
+
+.text-secondary {
+    color: var(--color-text-secondary) !important;
+}
+
+.text-muted {
+    color: var(--color-text-muted) !important;
+}
+
+.text-accent {
+    color: var(--color-accent-primary) !important;
+}
+
+.text-gold {
+    color: var(--color-accent-gold) !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-lowercase {
+    text-transform: lowercase;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.font-light {
+    font-weight: var(--font-light);
+}
+
+.font-normal {
+    font-weight: var(--font-normal);
+}
+
+.font-medium {
+    font-weight: var(--font-medium);
+}
+
+.font-semibold {
+    font-weight: var(--font-semibold);
+}
+
+.font-bold {
+    font-weight: var(--font-bold);
+}
+
+/* ===== LINKS ===== */
+
+a {
+    color: var(--color-accent-primary);
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--color-accent-secondary);
+}
+
+/* ===== SECTION TITLES ===== */
+
+.section-title {
+    font-size: var(--text-4xl);
+    font-weight: var(--font-bold);
+    text-align: center;
+    margin-bottom: var(--space-4);
+    color: var(--color-text-primary);
+}
+
+.section-subtitle {
+    font-size: var(--text-lg);
+    color: var(--color-text-muted);
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto var(--space-12);
+}
+
+/* ===== ACCENT TEXT ===== */
+
+.text-gradient {
+    background: linear-gradient(135deg, var(--color-accent-primary), var(--color-accent-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.text-highlight {
+    color: var(--color-accent-gold);
+}
+
+/* ===== RESPONSIVE TYPOGRAPHY ===== */
+
+@media (max-width: 768px) {
+
+    h1,
+    .h1 {
+        font-size: var(--text-4xl);
+    }
+
+    h2,
+    .h2 {
+        font-size: var(--text-3xl);
+    }
+
+    h3,
+    .h3 {
+        font-size: var(--text-2xl);
+    }
+
+    .section-title {
+        font-size: var(--text-3xl);
+    }
+}
+
+@media (max-width: 576px) {
+
+    h1,
+    .h1 {
+        font-size: var(--text-3xl);
+    }
+
+    h2,
+    .h2 {
+        font-size: var(--text-2xl);
+    }
+
+    .section-title {
+        font-size: var(--text-2xl);
+    }
+}
