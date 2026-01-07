@@ -34,6 +34,7 @@ class Header {
             },
             { name: 'Admissions', href: `${this.basePath}pages/admissions.html`, id: 'admissions' },
             { name: 'Campus Life', href: `${this.basePath}pages/campus-life.html`, id: 'campus-life' },
+            { name: 'Projects', href: `${this.basePath}pages/projects.html`, id: 'projects' },
             { name: 'Contact', href: `${this.basePath}pages/contact.html`, id: 'contact' }
         ];
     }
@@ -89,19 +90,18 @@ class Header {
                         </div>
                         <div class="top-bar-item">
                             <i class="fas fa-phone-alt"></i>
-                            <a href="tel:+924531234567">+92 453 123 4567</a>
+                            <a href="tel:0453220141">0453-220141</a>
                         </div>
                         <div class="top-bar-item">
                             <i class="fas fa-envelope"></i>
-                            <a href="mailto:info@gctbhakkar.edu.pk">info@gctbhakkar.edu.pk</a>
+                            <a href="mailto:gct786bhakkar@gmail.com">gct786bhakkar@gmail.com</a>
                         </div>
                     </div>
                     <div class="top-bar-right">
                         <div class="top-bar-social">
-                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://facebook.com/gctbhakkar" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/gctbhakkar/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://youtube.com/@gctbhakkar" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                         </div>
                     </div>
                 </div>
@@ -236,6 +236,24 @@ class Header {
                 dropdowns.forEach(d => d.classList.remove('open'));
             }
         });
+
+        // Sticky navbar on scroll - hide top bar and fix navbar
+        const topBar = document.querySelector('.top-bar');
+        const mainNavbar = document.getElementById('mainNavbar');
+
+        if (topBar && mainNavbar) {
+            const topBarHeight = topBar.offsetHeight;
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > topBarHeight) {
+                    mainNavbar.classList.add('navbar-fixed');
+                    document.body.style.paddingTop = mainNavbar.offsetHeight + 'px';
+                } else {
+                    mainNavbar.classList.remove('navbar-fixed');
+                    document.body.style.paddingTop = '';
+                }
+            });
+        }
     }
 }
 

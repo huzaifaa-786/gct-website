@@ -51,109 +51,105 @@
         <!-- Contact Info & Form -->
         <section class="section">
             <div class="container">
-                <div class="two-col" style="gap: 4rem;">
-                    <!-- Contact Information -->
-                    <div data-animate="fadeInLeft">
-                        <h2 class="h2 mb-6">Contact Information</h2>
-
-                        <div class="mb-6">
-                            <div class="flex gap-4 mb-4" style="display: flex; align-items: flex-start; gap: 1rem;">
-                                <div class="card-feature-icon" style="width: 50px; height: 50px; flex-shrink: 0;">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                                <div>
-                                    <h5 class="mb-2">Address</h5>
-                                    <p class="text-muted mb-0">GCT Campus, Main Road,<br>Bhakkar, Punjab, Pakistan</p>
-                                </div>
-                            </div>
-
-                            <div class="flex gap-4 mb-4" style="display: flex; align-items: flex-start; gap: 1rem;">
-                                <div class="card-feature-icon" style="width: 50px; height: 50px; flex-shrink: 0;">
-                                    <i class="fas fa-phone"></i>
-                                </div>
-                                <div>
-                                    <h5 class="mb-2">Phone</h5>
-                                    <p class="text-muted mb-0">
-                                        <a href="tel:+92453123456" style="color: var(--color-text-muted);">+92 453
-                                            123456</a>
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="flex gap-4 mb-4" style="display: flex; align-items: flex-start; gap: 1rem;">
-                                <div class="card-feature-icon" style="width: 50px; height: 50px; flex-shrink: 0;">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div>
-                                    <h5 class="mb-2">Email</h5>
-                                    <p class="text-muted mb-0">
-                                        <a href="mailto:info@gctbhakkar.edu.pk"
-                                            style="color: var(--color-text-muted);">info@gctbhakkar.edu.pk</a>
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="flex gap-4" style="display: flex; align-items: flex-start; gap: 1rem;">
-                                <div class="card-feature-icon" style="width: 50px; height: 50px; flex-shrink: 0;">
-                                    <i class="fas fa-clock"></i>
-                                </div>
-                                <div>
-                                    <h5 class="mb-2">Office Hours</h5>
-                                    <p class="text-muted mb-0">Monday - Friday: 8:00 AM - 4:00 PM<br>Saturday: 8:00 AM -
-                                        1:00 PM</p>
-                                </div>
-                            </div>
+                <!-- Contact Info Cards Grid -->
+                <div class="contact-info-grid" data-animate="fadeInUp">
+                    <div class="contact-info-card">
+                        <div class="contact-icon-wrapper">
+                            <i class="fas fa-map-marker-alt"></i>
                         </div>
-
-                        <h5 class="mb-4">Follow Us</h5>
-                        <div class="footer-social">
-                            <a href="https://facebook.com/gctbhakkar" class="social-link" target="_blank"><i
-                                    class="fab fa-facebook-f"></i></a>
-                            <a href="https://twitter.com/gctbhakkar" class="social-link" target="_blank"><i
-                                    class="fab fa-twitter"></i></a>
-                            <a href="https://instagram.com/gctbhakkar" class="social-link" target="_blank"><i
-                                    class="fab fa-instagram"></i></a>
-                            <a href="https://youtube.com/@gctbhakkar" class="social-link" target="_blank"><i
-                                    class="fab fa-youtube"></i></a>
-                        </div>
+                        <h4>Our Location</h4>
+                        <p>GCT Campus, Main Road,<br>Bhakkar, Punjab, Pakistan</p>
+                        <a href="https://maps.google.com" target="_blank" class="contact-link">
+                            <i class="fas fa-directions"></i> Get Directions
+                        </a>
                     </div>
 
-                    <!-- Contact Form -->
-                    <div data-animate="fadeInRight">
-                        <div class="card" style="padding: 2rem;">
-                            <h3 class="h4 mb-4">Send us a Message</h3>
-                            <form id="contactForm">
-                                <div class="mb-4">
-                                    <label for="name" class="form-label"
-                                        style="color: var(--color-text-secondary); margin-bottom: 0.5rem; display: block;">Full
-                                        Name *</label>
-                                    <input type="text" id="name" name="name" required class="newsletter-input w-full"
-                                        placeholder="Enter your full name" style="width: 100%; padding: 0.75rem 1rem;">
-                                </div>
+                    <div class="contact-info-card">
+                        <div class="contact-icon-wrapper"
+                            style="background: linear-gradient(135deg, #10b981, #059669);">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h4>Admissions</h4>
+                        <p>0453-220141</p>
+                        <a href="tel:0453220141" class="contact-link">
+                            <i class="fas fa-phone-alt"></i> Call Now
+                        </a>
+                    </div>
 
-                                <div class="mb-4">
-                                    <label for="email" class="form-label"
-                                        style="color: var(--color-text-secondary); margin-bottom: 0.5rem; display: block;">Email
-                                        Address *</label>
-                                    <input type="email" id="email" name="email" required class="newsletter-input w-full"
-                                        placeholder="Enter your email" style="width: 100%; padding: 0.75rem 1rem;">
-                                </div>
+                    <div class="contact-info-card">
+                        <div class="contact-icon-wrapper"
+                            style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h4>Email Address</h4>
+                        <p>gct786bhakkar@gmail.com</p>
+                        <a href="mailto:gct786bhakkar@gmail.com" class="contact-link">
+                            <i class="fas fa-paper-plane"></i> Send Email
+                        </a>
+                    </div>
 
-                                <div class="mb-4">
-                                    <label for="phone" class="form-label"
-                                        style="color: var(--color-text-secondary); margin-bottom: 0.5rem; display: block;">Phone
-                                        Number</label>
-                                    <input type="tel" id="phone" name="phone" class="newsletter-input w-full"
-                                        placeholder="Enter your phone number"
-                                        style="width: 100%; padding: 0.75rem 1rem;">
-                                </div>
+                    <div class="contact-info-card">
+                        <div class="contact-icon-wrapper"
+                            style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h4>Office Hours</h4>
+                        <p>Mon - Fri: 8:00 AM - 4:00 PM<br>Sat: 8:00 AM - 1:00 PM</p>
+                        <span class="contact-status open">
+                            <i class="fas fa-circle"></i> Currently Open
+                        </span>
+                    </div>
+                </div>
 
-                                <div class="mb-4">
-                                    <label for="subject" class="form-label"
-                                        style="color: var(--color-text-secondary); margin-bottom: 0.5rem; display: block;">Subject
-                                        *</label>
-                                    <select id="subject" name="subject" required class="newsletter-input w-full"
-                                        style="width: 100%; padding: 0.75rem 1rem;">
+                <!-- Social Media Section -->
+                <div class="social-connect-section" data-animate="fadeInUp" data-delay="200">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links-large">
+                        <a href="https://facebook.com/gctbhakkar" class="social-link-card" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="https://www.instagram.com/gctbhakkar/" class="social-link-card" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://youtube.com/@gctbhakkar" class="social-link-card" target="_blank">
+                            <i class="fab fa-youtube"></i>
+                            <span>YouTube</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form Section -->
+                <div class="contact-form-section" data-animate="fadeInUp" data-delay="300">
+                    <div class="section-header">
+                        <h2 class="section-title">Send us a Message</h2>
+                        <p class="section-subtitle">Have a question? We'd love to hear from you!</p>
+                    </div>
+                    <div class="contact-form-wrapper">
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name" class="form-label">Full Name *</label>
+                                    <input type="text" id="name" name="name" required class="form-input"
+                                        placeholder="Enter your full name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Email Address *</label>
+                                    <input type="email" id="email" name="email" required class="form-input"
+                                        placeholder="Enter your email">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="phone" class="form-label">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" class="form-input"
+                                        placeholder="Enter your phone number">
+                                </div>
+                                <div class="form-group">
+                                    <label for="subject" class="form-label">Subject *</label>
+                                    <select id="subject" name="subject" required class="form-input">
                                         <option value="">Select a subject</option>
                                         <option value="admission">Admission Inquiry</option>
                                         <option value="programs">Programs Information</option>
@@ -162,21 +158,18 @@
                                         <option value="other">Other</option>
                                     </select>
                                 </div>
+                            </div>
 
-                                <div class="mb-4">
-                                    <label for="message" class="form-label"
-                                        style="color: var(--color-text-secondary); margin-bottom: 0.5rem; display: block;">Message
-                                        *</label>
-                                    <textarea id="message" name="message" required rows="5"
-                                        class="newsletter-input w-full" placeholder="Write your message here..."
-                                        style="width: 100%; padding: 0.75rem 1rem; resize: vertical;"></textarea>
-                                </div>
+                            <div class="form-group">
+                                <label for="message" class="form-label">Message *</label>
+                                <textarea id="message" name="message" required rows="5" class="form-input"
+                                    placeholder="Write your message here..."></textarea>
+                            </div>
 
-                                <button type="submit" class="btn btn-primary btn-lg w-full">
-                                    <i class="fas fa-paper-plane me-2"></i>Send Message
-                                </button>
-                            </form>
-                        </div>
+                            <button type="submit" class="btn btn-primary btn-lg submit-btn">
+                                <i class="fas fa-paper-plane me-2"></i>Send Message
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>

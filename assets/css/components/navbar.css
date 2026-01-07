@@ -3,6 +3,15 @@
  * Complete header with top bar and navigation
  */
 
+/* ===== HEADER WRAPPER ===== */
+
+header[data-navbar] {
+    position: relative;
+    z-index: 1000;
+}
+
+/* No body padding needed - top bar scrolls away, navbar is sticky */
+
 /* ===== TOP BAR ===== */
 
 .top-bar {
@@ -81,6 +90,26 @@
     top: 0;
     z-index: 1000;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Fixed navbar state when scrolled */
+.main-navbar.navbar-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
 }
 
 .navbar-container {

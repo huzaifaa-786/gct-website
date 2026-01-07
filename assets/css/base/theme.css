@@ -321,6 +321,32 @@ img:not([loading="lazy"]) {
     background-color: rgba(0, 0, 0, 0.5) !important;
 }
 
+/* Hero page text enhancements for light theme */
+[data-theme="light"] .hero-page .hero-title,
+[data-theme="light"] .hero-page h1 {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme="light"] .hero-page .hero-subtitle,
+[data-theme="light"] .hero-page p {
+    color: rgba(255, 255, 255, 0.95) !important;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="light"] .hero-page .breadcrumb-link,
+[data-theme="light"] .hero-page .breadcrumb-separator {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+[data-theme="light"] .hero-page .breadcrumb-current {
+    color: #ffffff !important;
+}
+
+[data-theme="light"] .transparent-slide {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
 /* ----- Sections ----- */
 [data-theme="light"] .section {
     background: #ffffff !important;
@@ -727,29 +753,63 @@ img:not([loading="lazy"]) {
 }
 
 /* ----- Hero Carousel (Home Page) ----- */
-[data-theme="light"] .hero-section {
-    background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%) !important;
-}
-
+/* Hero section - make light theme match dark theme appearance */
 [data-theme="light"] .hero-bg-overlay {
-    background: linear-gradient(180deg, rgba(248, 250, 252, 0.3) 0%, rgba(226, 232, 240, 0.7) 100%) !important;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.6) 0%, rgba(15, 23, 42, 0.8) 100%) !important;
 }
 
-/* Keep carousel caption transparent - no white box */
+/* Keep carousel with dark appearance in light theme */
+[data-theme="light"] .hero-section {
+    background-color: #0f172a !important;
+}
+
+[data-theme="light"] .hero-section .carousel-item::before {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.7) 100%) !important;
+}
+
+/* Ensure carousel caption is above overlay - THEME AGNOSTIC */
 [data-theme="light"] .carousel-caption {
+    position: absolute !important;
+    left: 50% !important;
+    right: auto !important;
+    top: 50% !important;
+    bottom: auto !important;
+    transform: translate(-50%, -50%) !important;
+    width: 80%;
+    max-width: 900px;
+    text-align: center !important;
     background: transparent !important;
     padding: 0 !important;
     border-radius: 0 !important;
+    z-index: 10 !important;
 }
 
-[data-theme="light"] .carousel-caption h1 {
+[data-theme="light"] .carousel-caption h1,
+[data-theme="light"] .carousel-caption .hero-title {
     color: #ffffff !important;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6) !important;
 }
 
-[data-theme="light"] .carousel-caption p {
-    color: rgba(255, 255, 255, 0.95) !important;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5) !important;
+[data-theme="light"] .carousel-caption h1 .accent,
+[data-theme="light"] .carousel-caption h1 .text-primary,
+[data-theme="light"] .carousel-caption .text-primary {
+    color: #14b8a6 !important;
+}
+
+/* CRITICAL FIX: Hero text white class - maximum specificity */
+.hero-text-white,
+p.hero-text-white,
+.fs-5.hero-text-white,
+p.fs-5.hero-text-white,
+.carousel-caption .hero-text-white,
+.carousel-caption p.hero-text-white,
+.hero-section .carousel-caption .hero-text-white,
+[data-theme="light"] .hero-text-white,
+[data-theme="light"] p.hero-text-white,
+[data-theme="light"] .carousel-caption .hero-text-white,
+[data-theme="light"] .hero-section .carousel-caption p.hero-text-white,
+[data-theme="light"] .carousel-item .carousel-caption p.hero-text-white {
+    color: #ffffff !important;
+    text-shadow: none !important;
 }
 
 /* ----- Footer Headings ----- */

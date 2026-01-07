@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Student Projects at GCT Bhakkar - Explore innovative projects created by our students in Computer, Electrical, Mechanical, Civil, and Electronics Technology.">
+    <meta name="keywords" content="GCT Projects, Student Projects, Technology Projects, DAE Projects">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../assets/favicon/favicon.png" type="image/x-icon">
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="../assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+
+    <title>Student Projects - GCT Bhakkar</title>
+</head>
+
+<body>
+    <!-- Dynamic Header Component -->
+    <header data-navbar data-base-path="../" data-current-page="projects"></header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero hero-page">
+            <div class="hero-bg">
+                <div class="hero-bg-gradient"></div>
+            </div>
+            <div class="hero-content">
+                <nav class="hero-breadcrumb" data-animate="fadeInDown">
+                    <a href="../index.html" class="breadcrumb-link">Home</a>
+                    <span class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></span>
+                    <span class="breadcrumb-current">Projects</span>
+                </nav>
+                <h1 class="hero-title" data-animate="fadeInUp">
+                    Student <span class="accent">Projects</span>
+                </h1>
+                <p class="hero-subtitle" data-animate="fadeInUp" data-delay="200">
+                    Discover innovative projects created by GCT Bhakkar students across all technology departments
+                </p>
+            </div>
+        </section>
+
+        <!-- Projects Filter Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header" data-animate="fadeInUp">
+                    <h2 class="section-title">Explore Projects by Technology</h2>
+                    <p class="section-subtitle">Filter and browse through our students' best work</p>
+                </div>
+
+                <!-- Project Filter Tabs -->
+                <div class="projects-filter" data-animate="fadeInUp">
+                    <button class="project-filter-btn active" data-filter="all">
+                        <i class="fas fa-th-large"></i> All Projects
+                    </button>
+                    <button class="project-filter-btn" data-filter="cit">
+                        <i class="fas fa-laptop-code"></i> Computer
+                    </button>
+                    <button class="project-filter-btn" data-filter="electrical">
+                        <i class="fas fa-bolt"></i> Electrical
+                    </button>
+                    <button class="project-filter-btn" data-filter="mechanical">
+                        <i class="fas fa-cogs"></i> Mechanical
+                    </button>
+                    <button class="project-filter-btn" data-filter="civil">
+                        <i class="fas fa-building"></i> Civil
+                    </button>
+                    <button class="project-filter-btn" data-filter="electronics">
+                        <i class="fas fa-microchip"></i> Electronics
+                    </button>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="projects-grid" data-animate="fadeInUp">
+                    <!-- CIT Projects -->
+                    <div class="project-card" data-category="cit">
+                        <div class="project-image">
+                            <img src="../assets/images/computer.jpg" alt="Pharmacy Management System">
+                            <div class="project-overlay">
+                                <span class="project-duration"><i class="fas fa-clock"></i> 5 Months</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tech-badges">
+                                <span class="tech-badge">IoT</span>
+                                <span class="tech-badge">Database</span>
+                                <span class="tech-badge">Inventory</span>
+                            </div>
+                            <h4 class="project-title">Pharmacy Management System</h4>
+                            <p class="project-desc">An IoT-based system for efficient Pharmacy Management with
+                                comprehensive inventory tracking and automated alerts.</p>
+                            <div class="project-meta">
+                                <span class="project-category"><i class="fas fa-users"></i> M.Sameed, M.Arslan</span>
+                                <span class="project-category"><i class="fas fa-calendar"></i> Jan - May 2024</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="cit">
+                        <div class="project-image">
+                            <img src="../assets/images/computer.jpg" alt="Time Table Management System">
+                            <div class="project-overlay">
+                                <span class="project-duration"><i class="fas fa-clock"></i> 3 Months</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tech-badges">
+                                <span class="tech-badge">HTML/CSS</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">PHP</span>
+                            </div>
+                            <h4 class="project-title">Time Table Management System</h4>
+                            <p class="project-desc">A comprehensive web-based system for managing class schedules,
+                                teacher assignments, and room allocation.</p>
+                            <div class="project-meta">
+                                <span class="project-category"><i class="fas fa-folder"></i> Web Development</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="cit">
+                        <div class="project-image">
+                            <img src="../assets/images/computer.jpg" alt="College Management System">
+                            <div class="project-overlay">
+                                <span class="project-duration"><i class="fas fa-clock"></i> 4 Months</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tech-badges">
+                                <span class="tech-badge">HTML/CSS</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">PHP</span>
+                            </div>
+                            <h4 class="project-title">College Management System (CMS)</h4>
+                            <p class="project-desc">A comprehensive web-based system for managing student records,
+                                attendance, and academic performance.</p>
+                            <div class="project-meta">
+                                <span class="project-category"><i class="fas fa-folder"></i> Web Development</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="cit">
+                        <div class="project-image">
+                            <img src="../assets/images/computer.jpg" alt="GCT Bhakkar Website">
+                            <div class="project-overlay">
+                                <span class="project-duration"><i class="fas fa-clock"></i> 2 Months</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tech-badges">
+                                <span class="tech-badge">HTML/CSS</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">Bootstrap</span>
+                            </div>
+                            <h4 class="project-title">GCT Bhakkar Website</h4>
+                            <p class="project-desc">Official college website with modern design, dynamic components, and
+                                comprehensive information about all departments.</p>
+                            <div class="project-meta">
+                                <span class="project-category"><i class="fas fa-folder"></i> Web Development</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Electrical Projects -->
+                    <div class="project-card" data-category="electrical">
+                        <div class="project-image">
+                            <img src="../assets/images/electrical.jpg" alt="Bridge Protection System">
+                            <div class="project-overlay">
+                                <span class="project-duration"><i class="fas fa-clock"></i> 4 Months</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tech-badges">
+                                <span class="tech-badge">Sensors</span>
+                                <span class="tech-badge">Microcontroller</span>
+                                <span class="tech-badge">Safety</span>
+                            </div>
+                            <h4 class="project-title">Bridge Protection System</h4>
+                            <p class="project-desc">The system is programmed to allow only vehicles within specified
+                                weight limits to pass the bridges, ensuring structural safety.</p>
+                            <div class="project-meta">
+                                <span class="project-category"><i class="fas fa-folder"></i> Safety Systems</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="electrical">
+                        <div class="project-image">
+                            <img src="../assets/images/electrical.jpg" alt="Solar Tracker">
+                            <div class="project-overlay">
+                                <span class="project-duration"><i class="fas fa-clock"></i> 3 Months</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tech-badges">
+                                <span class="tech-badge">Solar Panels</span>
+                                <span class="tech-badge">Sensors</span>
+                                <span class="tech-badge">Motors</span>
+                            </div>
+                            <h4 class="project-title">Solar Tracker</h4>
+                            <p class="project-desc">This prototype is designed to yield maximum solar energy from solar
+                                plates by directing them to optimal angle toward the sun.</p>
+                            <div class="project-meta">
+                                <span class="project-category"><i class="fas fa-folder"></i> Renewable Energy</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Civil Projects -->
+                    <div class="project-card" data-category="civil">
+                        <div class="project-image">
+                            <img src="../assets/images/civil.jpg" alt="Driver's Anti-sleep Alarm">
+                            <div class="project-overlay">
+                                <span class="project-duration"><i class="fas fa-clock"></i> 3 Months</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tech-badges">
+                                <span class="tech-badge">Sensors</span>
+                                <span class="tech-badge">Alarm System</span>
+                                <span class="tech-badge">Safety</span>
+                            </div>
+                            <h4 class="project-title">Driver's Anti-sleep Alarm</h4>
+                            <p class="project-desc">This system alerts the user if he/she falls asleep at the wheel,
+                                thereby avoiding accidents and saving lives.</p>
+                            <div class="project-meta">
+                                <span class="project-category"><i class="fas fa-folder"></i> Safety Systems</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Electronics Projects -->
+                    <div class="project-card" data-category="electronics">
+                        <div class="project-image">
+                            <img src="../assets/images/electronics.jpg" alt="Metal or Mine Detector">
+                            <div class="project-overlay">
+                                <span class="project-duration"><i class="fas fa-clock"></i> 4 Months</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tech-badges">
+                                <span class="tech-badge">Robotics</span>
+                                <span class="tech-badge">Metal Detection</span>
+                                <span class="tech-badge">Military</span>
+                            </div>
+                            <h4 class="project-title">Metal or Mine Detector Robot</h4>
+                            <p class="project-desc">This robot is used for surveillance purposes to facilitate military
+                                operations by detecting mines. It can also be used as a metal detector.</p>
+                            <div class="project-meta">
+                                <span class="project-category"><i class="fas fa-folder"></i> Robotics</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="electronics">
+                        <div class="project-image">
+                            <img src="../assets/images/electronics.jpg" alt="Smart Wheel Chair">
+                            <div class="project-overlay">
+                                <span class="project-duration"><i class="fas fa-clock"></i> 5 Months</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tech-badges">
+                                <span class="tech-badge">Robotics</span>
+                                <span class="tech-badge">Assistive Tech</span>
+                                <span class="tech-badge">Motors</span>
+                            </div>
+                            <h4 class="project-title">Smart Wheel Chair</h4>
+                            <p class="project-desc">A multi-functioned wheel chair to assist special persons. Its
+                                function is based on robotics to help-out the person in moving.</p>
+                            <div class="project-meta">
+                                <span class="project-category"><i class="fas fa-folder"></i> Assistive Technology</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="electronics">
+                        <div class="project-image">
+                            <img src="../assets/images/electronics.jpg" alt="Home Automation">
+                            <div class="project-overlay">
+                                <span class="project-duration"><i class="fas fa-clock"></i> 3 Months</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tech-badges">
+                                <span class="tech-badge">IoT</span>
+                                <span class="tech-badge">WiFi</span>
+                                <span class="tech-badge">Remote Control</span>
+                            </div>
+                            <h4 class="project-title">Home Automation</h4>
+                            <p class="project-desc">Modern houses are gradually shifting from conventional switches to
+                                centralized control system, involving remote controlled switches.</p>
+                            <div class="project-meta">
+                                <span class="project-category"><i class="fas fa-folder"></i> IoT & Automation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="electronics">
+                        <div class="project-image">
+                            <img src="../assets/images/electronics.jpg" alt="Man Following Robot">
+                            <div class="project-overlay">
+                                <span class="project-duration"><i class="fas fa-clock"></i> 4 Months</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tech-badges">
+                                <span class="tech-badge">Robotics</span>
+                                <span class="tech-badge">Sensors</span>
+                                <span class="tech-badge">AI</span>
+                            </div>
+                            <h4 class="project-title">Man Following Robot</h4>
+                            <p class="project-desc">This is a robotic prototype which will follow a human being
+                                (object). It can be used to carry luggage box or a school bag for children.</p>
+                            <div class="project-meta">
+                                <span class="project-category"><i class="fas fa-folder"></i> Robotics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section section-darker">
+            <div class="container">
+                <div class="section-cta" data-animate="scaleIn">
+                    <h2 class="section-title mb-4">Have a Project Idea?</h2>
+                    <p class="section-subtitle mx-auto">
+                        Join GCT Bhakkar and turn your innovative ideas into reality with guidance from our expert
+                        faculty
+                    </p>
+                    <div class="btn-group btn-group-center mt-4">
+                        <a href="./admissions.html" class="btn btn-accent btn-lg">Apply Now</a>
+                        <a href="./contact.html" class="btn btn-outline-light btn-lg">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Project Details Modal -->
+    <div class="project-modal" id="projectModal">
+        <div class="project-modal-overlay"></div>
+        <div class="project-modal-content">
+            <button class="project-modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="project-modal-header">
+                <h3 id="modalTitle">Project Team</h3>
+                <p id="modalProject">College Management System</p>
+            </div>
+            <div class="project-modal-body">
+                <h4>Team Members</h4>
+                <div class="team-members-grid" id="teamMembers">
+                    <!-- Team members will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dynamic Footer Component -->
+    <div data-footer data-base-path="../"></div>
+
+    <!-- Vendor Scripts -->
+    <script src="../assets/js/vendor/bootstrap.bundle.min.js"></script>
+
+    <!-- Component Scripts -->
+    <script src="../assets/js/components/navbar.js"></script>
+    <script src="../assets/js/components/footer.js"></script>
+
+    <!-- Utility Scripts -->
+    <script src="../assets/js/utils/theme.js"></script>
+    <script src="../assets/js/utils/animations.js"></script>
+    <script src="../assets/js/utils/helpers.js"></script>
+
+    <!-- Main App Script -->
+    <script src="../assets/js/main.js"></script>
+
+    <!-- Projects Filter & Modal Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterBtns = document.querySelectorAll('.project-filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+            const modal = document.getElementById('projectModal');
+            const modalClose = document.getElementById('modalClose');
+            const modalOverlay = modal.querySelector('.project-modal-overlay');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalProject = document.getElementById('modalProject');
+            const teamMembers = document.getElementById('teamMembers');
+
+            // Project teams data
+            const projectTeams = {
+                'default': {
+                    name: 'Project Team',
+                    members: [
+                        { name: 'Team Lead', role: 'Project Manager', phone: '0300-1234567' },
+                        { name: 'Developer 1', role: 'Developer', phone: '0301-1234567' },
+                        { name: 'Developer 2', role: 'Developer', phone: '0302-1234567' }
+                    ]
+                }
+            };
+
+            // Filter functionality
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    const filter = btn.dataset.filter;
+                    projectCards.forEach(card => {
+                        if (filter === 'all' || card.dataset.category === filter) {
+                            card.classList.remove('hidden');
+                            card.style.animation = 'fadeInUp 0.4s ease forwards';
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+
+            // Modal functionality
+            document.querySelectorAll('.project-details-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const projectCard = btn.closest('.project-card');
+                    const projectTitle = projectCard.querySelector('.project-title').textContent;
+
+                    modalProject.textContent = projectTitle;
+
+                    const team = projectTeams['default'];
+                    teamMembers.innerHTML = team.members.map(member => `
+                        <div class="team-member-card">
+                            <div class="team-member-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="team-member-info">
+                                <h5>${member.name}</h5>
+                                <span class="team-member-role">${member.role}</span>
+                                <a href="tel:${member.phone}" class="team-member-phone">
+                                    <i class="fas fa-phone"></i> ${member.phone}
+                                </a>
+                            </div>
+                        </div>
+                    `).join('');
+
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            // Close modal
+            [modalClose, modalOverlay].forEach(el => {
+                el.addEventListener('click', () => {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

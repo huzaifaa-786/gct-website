@@ -4,56 +4,54 @@
  */
 
 class Footer {
-    constructor(options = {}) {
-        this.container = options.container || 'footer';
-        this.basePath = options.basePath || './';
-        this.init();
-    }
+  constructor(options = {}) {
+    this.container = options.container || 'footer';
+    this.basePath = options.basePath || './';
+    this.init();
+  }
 
-    init() {
-        this.render();
-    }
+  init() {
+    this.render();
+  }
 
-    getSocialLinks() {
-        return [
-            { name: 'Facebook', icon: 'fab fa-facebook-f', href: 'https://facebook.com/gctbhakkar' },
-            { name: 'Twitter', icon: 'fab fa-twitter', href: 'https://twitter.com/gctbhakkar' },
-            { name: 'Instagram', icon: 'fab fa-instagram', href: 'https://instagram.com/gctbhakkar' },
-            { name: 'LinkedIn', icon: 'fab fa-linkedin-in', href: 'https://linkedin.com/school/gctbhakkar' },
-            { name: 'YouTube', icon: 'fab fa-youtube', href: 'https://youtube.com/@gctbhakkar' }
-        ];
-    }
+  getSocialLinks() {
+    return [
+      { name: 'Facebook', icon: 'fab fa-facebook-f', href: 'https://facebook.com/gctbhakkar' },
+      { name: 'Instagram', icon: 'fab fa-instagram', href: 'https://www.instagram.com/gctbhakkar/' },
+      { name: 'YouTube', icon: 'fab fa-youtube', href: 'https://youtube.com/@gctbhakkar' }
+    ];
+  }
 
-    getQuickLinks() {
-        return [
-            { name: 'Home', href: `${this.basePath}index.html` },
-            { name: 'About Us', href: `${this.basePath}pages/about.html` },
-            { name: 'Programs', href: `${this.basePath}pages/programs.html` },
-            { name: 'Admissions', href: `${this.basePath}pages/admissions.html` },
-            { name: 'Contact', href: `${this.basePath}pages/contact.html` }
-        ];
-    }
+  getQuickLinks() {
+    return [
+      { name: 'Home', href: `${this.basePath}index.html` },
+      { name: 'About Us', href: `${this.basePath}pages/about.html` },
+      { name: 'Programs', href: `${this.basePath}pages/programs.html` },
+      { name: 'Admissions', href: `${this.basePath}pages/admissions.html` },
+      { name: 'Contact', href: `${this.basePath}pages/contact.html` }
+    ];
+  }
 
-    getPrograms() {
-        return [
-            { name: 'Computer Technology', href: `${this.basePath}pages/departments/cit.html` },
-            { name: 'Electrical Technology', href: `${this.basePath}pages/departments/electrical.html` },
-            { name: 'Mechanical Technology', href: `${this.basePath}pages/departments/mechanical.html` },
-            { name: 'Civil Technology', href: `${this.basePath}pages/departments/civil.html` },
-            { name: 'Electronics Technology', href: `${this.basePath}pages/departments/electronics.html` }
-        ];
-    }
+  getPrograms() {
+    return [
+      { name: 'Computer Technology', href: `${this.basePath}pages/departments/cit.html` },
+      { name: 'Electrical Technology', href: `${this.basePath}pages/departments/electrical.html` },
+      { name: 'Mechanical Technology', href: `${this.basePath}pages/departments/mechanical.html` },
+      { name: 'Civil Technology', href: `${this.basePath}pages/departments/civil.html` },
+      { name: 'Electronics Technology', href: `${this.basePath}pages/departments/electronics.html` }
+    ];
+  }
 
-    render() {
-        const container = document.querySelector(this.container);
-        if (!container) return;
+  render() {
+    const container = document.querySelector(this.container);
+    if (!container) return;
 
-        const socialLinks = this.getSocialLinks();
-        const quickLinks = this.getQuickLinks();
-        const programs = this.getPrograms();
-        const currentYear = new Date().getFullYear();
+    const socialLinks = this.getSocialLinks();
+    const quickLinks = this.getQuickLinks();
+    const programs = this.getPrograms();
+    const currentYear = new Date().getFullYear();
 
-        container.innerHTML = `
+    container.innerHTML = `
       <footer class="footer">
         <div class="container">
           <div class="footer-container">
@@ -120,13 +118,13 @@ class Footer {
                 <div class="footer-contact-item">
                   <i class="fas fa-phone"></i>
                   <div class="footer-contact-text">
-                    <a href="tel:+92453123456">+92 453 123456</a>
+                    <a href="tel:0453220141">0453-220141 (Admissions)</a>
                   </div>
                 </div>
                 <div class="footer-contact-item">
                   <i class="fas fa-envelope"></i>
                   <div class="footer-contact-text">
-                    <a href="mailto:info@gctbhakkar.edu.pk">info@gctbhakkar.edu.pk</a>
+                    <a href="mailto:gct786bhakkar@gmail.com">gct786bhakkar@gmail.com</a>
                   </div>
                 </div>
                 <div class="footer-contact-item">
@@ -141,34 +139,40 @@ class Footer {
           
           <!-- Footer Bottom -->
           <div class="footer-bottom">
-            <p class="footer-copyright">
-              &copy; ${currentYear} <a href="${this.basePath}index.html">GCT Bhakkar</a>. All Rights Reserved.
-            </p>
+            <div class="footer-credits">
+              <p class="footer-copyright">
+                &copy; ${currentYear} <a href="${this.basePath}index.html">GCT Bhakkar</a>. All Rights Reserved.
+              </p>
+              <p class="footer-made-by">
+                Made with <i class="fas fa-heart" style="color: #ef4444;"></i> by 
+                <a href="${this.basePath}pages/developers.html" class="developers-link">CIT Department</a>
+              </p>
+            </div>
             <div class="footer-bottom-links">
+              <a href="${this.basePath}pages/developers.html" class="footer-bottom-link"><i class="fas fa-code"></i> Meet Developers</a>
               <a href="#" class="footer-bottom-link">Privacy Policy</a>
-              <a href="#" class="footer-bottom-link">Terms of Service</a>
               <a href="${this.basePath}pages/contact.html" class="footer-bottom-link">Contact</a>
             </div>
           </div>
         </div>
       </footer>
     `;
-    }
+  }
 }
 
 // Auto-initialize if data attribute is present
 document.addEventListener('DOMContentLoaded', () => {
-    const footer = document.querySelector('[data-footer]');
-    if (footer) {
-        const basePath = footer.dataset.basePath || './';
-        new Footer({
-            container: '[data-footer]',
-            basePath
-        });
-    }
+  const footer = document.querySelector('[data-footer]');
+  if (footer) {
+    const basePath = footer.dataset.basePath || './';
+    new Footer({
+      container: '[data-footer]',
+      basePath
+    });
+  }
 });
 
 // Export for manual initialization
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = Footer;
+  module.exports = Footer;
 }
