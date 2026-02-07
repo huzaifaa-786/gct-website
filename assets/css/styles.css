@@ -1156,6 +1156,7 @@ body {
 }
 
 /* Principal Message */
+
 .principal-message {
   background: linear-gradient(135deg, var(--secondary-dark), var(--primary-dark));
   position: relative;
@@ -1260,14 +1261,15 @@ body {
   background: rgba(255, 255, 255, 0.2);
   color: white;
   margin: 0 5px;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.65);
   transition: all 0.3s ease;
   text-decoration: none;
 }
 
-.social-links a:hover {
-  background: var(--accent-teal) !important;
+.social-links a:hover { background: #0830b4 !important; 
   transform: translateY(-3px);
-}
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.8); 
+   }
 
 
 .text-center.p-4 {
@@ -4006,4 +4008,29 @@ textarea.form-input {
 }
 .event-badge{
   margin-left: 15px ;
+}
+/* ..................modified code........... */
+.site-footer {
+  --text-muted: #94a3b8;
+}
+.site-footer {
+  color-scheme: dark;
+  --text-muted: #94a3b8;
+}
+.site-footer {
+  color-scheme: dark;
+  --text-muted: #94a3b8;
+}
+.site-footer .footer-made-by {
+  color: #94a3b8 !important;
+}
+.site-footer .fa-heart {
+  color: #ef4444 !important;
+}
+.site-footer a.developers-link {
+  color: #60a5fa !important;
+}
+.site-footer {
+  --text-primary: #e2e8f0 !important;
+  --bg-primary: transparent !important;
 }
